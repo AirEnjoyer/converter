@@ -10,34 +10,35 @@ double convert(double base, int convertingFrom, int convertingTo, int unitType) 
     switch (convertingFrom) {
         case 1: base = base / 1000; break;
         case 2: base = base / 100; break;
-        case 3: base = base * 0.3048; break;
-        case 4: base = base * 0.9144; break;
-        case 5: base = base * 1000; break;
-        case 6: base = base * 1609.34; break;
-        case 7: base = base * 0.453592; break;
-        case 8: base = base / 2.20462; break;
-        case 9: base = cbrt((3.0 * base) / (4 * pi)); break;
-        case 10: base = sqrt(base / pi); break;
-        case 11: base = sqrt(base / (4 * pi)); break;
+        case 3: base = base; break;
+        case 4: base = base * 0.3048; break;
+        case 5: base = base * 0.9144; break;
+        case 6: base = base * 1000; break;
+        case 7: base = base * 1609.34; break;
+        case 8: base = base * 0.453592; break;
+        case 9: base = base; break;
+        case 10: base = cbrt((4.0 / 3.0) * pi * pow(base, 3)); break;
+        case 11: base = base; break;
         case 12: base = sqrt(base / pi); break;
-        case 13: base = sqrt(base / (4 * pi)); break;
+        case 14: base = sqrt(base / (pi * 4)); break;
     }
 
     switch (convertingTo) {
         case 1: result = base * 1000; break;
         case 2: result = base * 100; break;
-        case 3: result = base / 0.3048; break;
-        case 4: result = base / 0.9144; break;
-        case 5: result = base / 1000; break;
-        case 6: result = base / 1609.34; break;
-        case 7: result = base * 2.20462; break;
-        case 8: result = base; break;
-        case 9: result = (4.0/3.0) * pi * pow(base, 3); break;
-        case 10: result = pi * pow(base, 2); break;
-        case 11: result = 4 * pi * pow(base, 2); break;
+        case 3: result = base; break;
+        case 4: result = base / 0.3048; break;
+        case 5: result = base / 0.9144; break;
+        case 6: result = base / 1000; break;
+        case 7: result = base / 1609.34; break;
+        case 8: result = base / 0.453592; break;
+        case 9: result = base; break;
+        case 10: result = (4.0/3.0) * pi * pow(base, 3); break;
+        case 11: result = base; break;
         case 12: result = pi * pow(base, 2); break;
         case 13: result = 4 * pi * pow(base, 2); break;
     }
+
 
     return result;
 }
@@ -59,7 +60,7 @@ int main() {
     }
     scanf("%d", &convertingFrom);
 
-    printf("Enter the number you are converting: ");
+    printf("Enter the number you are converting: \n");
     scanf("%lf", &base);
 
     switch (convertingFrom) {

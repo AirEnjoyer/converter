@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/Converter.dir/main.c.o -o Converter  -lm 

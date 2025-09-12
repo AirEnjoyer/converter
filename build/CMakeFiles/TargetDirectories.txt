@@ -1,0 +1,3 @@
+/home/nick/converter/build/CMakeFiles/Converter.dir
+/home/nick/converter/build/CMakeFiles/edit_cache.dir
+/home/nick/converter/build/CMakeFiles/rebuild_cache.dir
